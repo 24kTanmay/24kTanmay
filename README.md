@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Tanmay Roy</h1>
-<h3 align="center">a sophomore from IIT Kanpur,India</h3>
+<h3 align="center">a sophomore from IIT Kanpur, India</h3>
 
 - 📫 How to reach me **rtanmay588@gmail.com**
 
