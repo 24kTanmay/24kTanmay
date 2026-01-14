@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Status Mockup</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: #E5E7EB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1F2937;
+        }
+
+        /* Mobile Frame */
+        .mobile-frame {
+            width: 360px;
+            height: 640px;
+            background-color: #F8FAFC;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Content */
+        .content {
+            flex: 1;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        /* Status Icon Section */
+        .status-hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #ECFDF5; /* Success Green Light */
+            color: #10B981; /* Success Green */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 0 0 8px #F0FDFA; /* Outer ring */
+        }
+
+        /* For Failure state, use red: 
+           bg: #FEF2F2, color: #EF4444, ring: #FEF2F2 */
+
+        .status-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .status-amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: #111827;
+            font-feature-settings: "tnum";
+        }
+
+        /* Receipt Card */
+        .receipt-card {
+            background: #FFFFFF;
+            width: 100%;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E5E7EB;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .receipt-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .label {
+            color: #6B7280;
+            font-weight: 500;
+        }
+
+        .value {
+            color: #1F2937;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .divider {
+            height: 1px;
+            background: #F3F4F6;
+            width: 100%;
+            margin: 4px 0;
+        }
+
+        .copy-btn {
+            background: none;
+            border: none;
+            color: #0D9488;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 16px 20px 34px 20px;
+            background: #F8FAFC;
+        }
+
+        .btn-primary {
+            width: 100%;
+            height: 52px;
+            background: #0D9488;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px -1px rgba(13, 148, 136, 0.2);
+            transition: opacity 0.2s;
+        }
+
+        .btn-primary:active {
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            /* Style for Retry button if needed */
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            color: #374151;
+            margin-top: 12px;
+        }
+
+        /* SVG */
+        svg {
+            width: 40px;
+            height: 40px;
+            stroke-width: 3;
+        }
+
+        .copy-icon {
+            width: 14px;
+            height: 14px;
+            stroke-width: 2;
+            vertical-align: middle;
+        }
+
+        /* Home Indicator */
+        .home-indicator {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background: #E2E8F0;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-frame">
+        
+        <!-- Main Content -->
+        <main class="content">
+
+            <!-- Status Indicator -->
+            <div class="status-hero">
+                <div class="icon-circle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <h2 class="status-title">Payment Successful</h2>
+                <div class="status-amount">$150.00</div>
+            </div>
+
+            <!-- Receipt Details -->
+            <div class="receipt-card">
+                <div class="receipt-row">
+                    <span class="label">Paid to</span>
+                    <span class="value">Sarah A.</span>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="receipt-row">
+                    <span class="label">Date</span>
+                    <span class="value">Oct 24, 2024</span>
+                </div>
+                <div class="receipt-row">
+                    <span class="label">Time</span>
+                    <span class="value">10:42 AM</span>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="receipt-row">
+                    <span class="label">Transaction ID</span>
+                    <div style="display: flex; align-items: center;">
+                        <span class="value" style="font-family: monospace; font-size: 13px;">TXN_88291039</span>
+                        <button class="copy-btn">
+                            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <button class="btn-primary">Done</button>
+            <!-- 
+            Use this for Failed state:
+            <button class="btn-primary" style="background: #FFFFFF; color: #374151; border: 1px solid #E5E7EB; margin-bottom: 12px; box-shadow:none;">Cancel</button>
+            <button class="btn-primary">Retry</button> 
+            -->
+        </footer>
+
+        <!-- Home Indicator -->
+        <div class="home-indicator"></div>
+    </div>
+
+</body>
+</html>
